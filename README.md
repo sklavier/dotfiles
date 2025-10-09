@@ -4,7 +4,7 @@
 It's a simple Hyprland config, but it is look pretty!
 
 ## Screenshot
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![Alt text](/screenshot/screenshot_2025-09-03_19-39-23.png?raw=true "Optional Title")
 
 ## Installation
 
