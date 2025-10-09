@@ -1,0 +1,153 @@
+{
+  "reload_style_on_change": true,
+  "output": ["HDMI-A-1"],
+  "spacing": 4,
+  "height": 34,
+  "modules-left": [
+    "hyprland/workspaces",
+    "cava",
+    "mpris",
+    "network"
+    //"custom/weather",
+    //"hyprland/mode",
+  ],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "custom/weather",
+    //"hyprland/scratchpad",
+    "idle_inhibitor",
+    "pulseaudio",
+    //"backlight",
+    "clock",
+    "tray"
+  ],
+  // Modules configuration
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": "",
+      "empty": "",
+      "urgent": "!"
+    },
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5]
+    }
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 60,
+    "all-outputs": true,
+    "format-empty": "Welcome!"
+  },
+
+  "network": {
+    "interface": "wlan0",
+    "format": "{ifname}",
+    "format-wifi": "{ipaddr}  ",
+    "format-ethernet": "{ifname} ",
+    "format-disconnected": "",
+    "tooltip-format": "{ifname}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 45
+  },
+
+  "cava": {
+    //"cava_config": "$XDG_CONFIG_HOME/cava/config",
+    "framerate": 30,
+    "autosens": 1,
+    "bars": 12,
+    "lower_cutoff_freq": 50,
+    "higher_cutoff_freq": 10000,
+    "method": "pulse",
+    "source": "auto",
+    "stereo": true,
+    "bar_delimiter": 0,
+    "noise_reduction": 0.77,
+    "input_delay": 2,
+    "hide_on_silence": true,
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "actions": {
+      "on-click-right": "mode"
+    }
+  },
+
+  "mpris": {
+    //"player": "firefox",
+    "format": "{status_icon} {dynamic}  ",
+    "format-paused": "{status_icon} <i>{dynamic}</i>  ",
+    "interval": 1,
+    "dynamic-len": 45,
+    "status-icons": {
+      "playing": "▶",
+      "paused": "⏸",
+      "stopped": ""
+    },
+    "dynamic-order": ["title", "artist"]
+    //"ignored-players": ["firefox"]
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "hyprland/mode": {
+    "format": "{}"
+  },
+  "hyprland/scratchpad": {
+    "format": "{icon} {count}",
+    "show-empty": false,
+    "format-icons": ["", ""],
+    "tooltip": true,
+    "tooltip-format": "{app}: {title}"
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10
+  },
+  "load": {
+    "format": " {}"
+  },
+  "clock": {
+    // "timezone": "America/New_York",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": " {:%H:%M}",
+    "format-alt": " {:%a %F}"
+  },
+  "custom/weather": {
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --lang es -m --nerd",
+    "return-type": "json"
+  },
+  //"backlight": {
+  //  "device": "acpi_video1",
+  //  "format": "{icon} {percent}%",
+  //  "format-icons": ["", "", "", "", "", "", "", "", ""]
+  //},
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}% ",
+    "format-bluetooth-muted": "󰆪 {icon}",
+    "format-muted": "x 0%",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "󰂑",
+      "headset": "󰂑",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pactl set-sink-mute 0 toggle",
+    "on-click-right": "pavucontrol"
+  }
+}
