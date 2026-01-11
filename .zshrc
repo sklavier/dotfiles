@@ -104,3 +104,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #alias exercism="~/bin/exercism"
+alias update="~/.config/scripts/update.sh"
