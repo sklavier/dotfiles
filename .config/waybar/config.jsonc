@@ -1,6 +1,6 @@
 {
   "reload_style_on_change": true,
-  "output": ["HDMI-A-1"],
+  //"output": ["HDMI-A-1"],
   "spacing": 4,
   "height": 34,
   "modules-left": [
@@ -13,23 +13,44 @@
   ],
   "modules-center": ["hyprland/window"],
   "modules-right": [
-    "custom/weather",
+    //"custom/weather",
     //"hyprland/scratchpad",
-    "idle_inhibitor",
+    //"idle_inhibitor",
     "pulseaudio",
-    //"backlight",
+    "battery",
+    "backlight",
     "clock",
     "tray"
   ],
   // Modules configuration
-
+  	"battery": {
+		"states": {
+			"warning": 20,
+			"critical": 10
+		},
+		"format": "{icon} {capacity}%",
+		"format-time": "{H} hr {M} min",
+		"format-icons": [
+			"󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+		],
+		"format-charging": "󰉁 {capacity}%",
+		//"min-length": 7,
+		//"max-length": 7,
+		"tooltip-format": "<b>Discharging</b>: {time}",
+		"tooltip-format-charging": "<b>Charging</b>: {time}",
+		"events": {
+		"on-discharging-warning": "notify-send 'Battery Low (20%)' -u critical -i 'battery-020'",
+		"on-discharging-critical": "notify-send 'Battery Critical (10%)' -u critical -i 'battery-010'",
+		"on-charging-100": "notify-send 'Battery Full (100%)' -i 'battery-100-charged'"
+		}
+	},
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "active": "",
-      "default": "",
-      "empty": "",
-      "urgent": "!"
+      "active": " ",
+      "default": " ",
+      "empty": " ",
+      "urgent": "! "
     },
     "persistent-workspaces": {
       "*": [1, 2, 3, 4, 5]
@@ -38,17 +59,17 @@
 
   "hyprland/window": {
     "format": "{title}",
-    "max-length": 60,
+    "max-length": 30,
     "all-outputs": true,
     "format-empty": "Welcome!"
   },
 
   "network": {
-    "interface": "wlan0",
+    "interface": "wlp2s0",
     "format": "{ifname}",
     "format-wifi": "{ipaddr}  ",
-    "format-ethernet": "{ifname} ",
-    "format-disconnected": "",
+    "format-ethernet": "{ifname}  ",
+    "format-disconnected": " ",
     "tooltip-format": "{ifname}",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
     "tooltip-format-ethernet": "{ifname} ",
@@ -81,7 +102,7 @@
     "format": "{status_icon} {dynamic}  ",
     "format-paused": "{status_icon} <i>{dynamic}</i>  ",
     "interval": 1,
-    "dynamic-len": 45,
+    "dynamic-len": 20,
     "status-icons": {
       "playing": "▶",
       "paused": "⏸",
@@ -115,7 +136,7 @@
     "format": " {}"
   },
   "clock": {
-    // "timezone": "America/New_York",
+    "timezone": "America/Santiago",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format": " {:%H:%M}",
     "format-alt": " {:%a %F}"
@@ -127,16 +148,16 @@
     "exec": "wttrbar --lang es -m --nerd",
     "return-type": "json"
   },
-  //"backlight": {
-  //  "device": "acpi_video1",
-  //  "format": "{icon} {percent}%",
-  //  "format-icons": ["", "", "", "", "", "", "", "", ""]
-  //},
+  "backlight": {
+    "device": "acpi_video1",
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
   "pulseaudio": {
     "scroll-step": 5,
     "format": "{icon} {volume}%",
     "format-bluetooth": "{icon} {volume}% ",
-    "format-bluetooth-muted": "󰆪 {icon}",
+    "format-bluetooth-muted": "x {icon}",
     "format-muted": "x 0%",
     "format-icons": {
       "headphone": "",

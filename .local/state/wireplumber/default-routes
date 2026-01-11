@@ -1,0 +1,9 @@
+[default-routes]
+alsa_card.pci-0000_05_00.1:output:hdmi-output-1={"latencyOffsetNsec":0, "channelVolumes":[0.728985, 0.728985], "mute":false, "channelMap":["FL", "FR"], "iec958Codecs":["PCM"]}
+alsa_card.pci-0000_05_00.1:profile:output:hdmi-stereo-extra1=["hdmi-output-1"]
+alsa_card.pci-0000_05_00.6:input:analog-input-internal-mic={"channelMap":["FL", "FR"], "channelVolumes":[1.000000, 1.000000], "mute":false, "latencyOffsetNsec":0}
+alsa_card.pci-0000_05_00.6:output:analog-output-headphones={"mute":false, "latencyOffsetNsec":0, "channelMap":["FL", "FR"], "channelVolumes":[0.124977, 0.124977]}
+alsa_card.pci-0000_05_00.6:output:analog-output-speaker={"mute":false, "latencyOffsetNsec":0, "channelVolumes":[0.166405, 0.166405], "channelMap":["FL", "FR"]}
+alsa_card.pci-0000_05_00.6:profile:output:analog-stereo+input:analog-stereo=["analog-output-speaker"]
+bluez_card.5A_84_65_29_AE_0F:output:headset-output={"mute":false, "channelMap":["FL", "FR"], "channelVolumes":[0.057259, 0.057259], "latencyOffsetNsec":0}
+bluez_card.5A_84_65_29_AE_0F:profile:a2dp-sink=["headset-output"]

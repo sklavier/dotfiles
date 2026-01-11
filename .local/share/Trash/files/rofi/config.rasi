@@ -1,0 +1,4 @@
+configuration { 
+	location: 7;
+}
+@theme "/home/bachpro/.local/share/rofi/themes/simple-tokyonight.rasi"

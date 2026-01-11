@@ -1,57 +1,166 @@
-:root {
-  --border-radius: 22px;
-  --cc-bg: transparent;
-
-  --widget-background: rgba(46, 46, 46, 0.7);
-  --noti-bg-alpha: 0.6;
-
-  --padding: calc(var(--border-radius) / 2);
+* {
+    font-size: 14px;
+    border-radius: 5px;
 }
 
-.control-center {
-  border-radius: 0;
+window#waybar {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    background-color: transparent;
+    border-bottom: 0px;
+    color: #a1c2e1; /* texto claro */
+    transition-property: background-color;
+    transition-duration: .5s;
 }
 
-.widgets > .widget,
-.widget-mpris > carouselindicatordots,
-.widget-mpris > box > button {
-  background: var(--widget-background);
-  border-radius: var(--border-radius);
-  padding: calc(var(--border-radius) / 2);
-  border: var(--border);
+window#waybar.hidden {
+    opacity: 0.2;
 }
 
-.control-center-list-placeholder {
-  padding: var(--border-radius);
+window#waybar.empty #window {
+    background-color: transparent;
 }
 
-.notification-group {
-  border-radius: var(--border-radius);
-  padding: 8px;
+/* Margins */
+.modules-right {
+    margin: 10px 10px 0 0;
+}
+.modules-center {
+    margin: 10px 0 0 0;
+}
+.modules-left {
+    margin: 10px 0 0 10px;
 }
 
-.widget.widget-mpris {
-  background: transparent;
-  border-radius: 0;
-  padding: 0;
-  border: none;
+button {
+    border: none;
 }
-.widget.widget-mpris > carouselindicatordots {
-  --dots-padding: 4px;
-  padding: var(--dots-padding);
-  padding-left: var(--dots-padding);
-  padding-right: calc(6px + var(--dots-padding));
-  margin: 0;
-  margin-top: var(--padding);
+
+/* --- WORKSPACES --- */
+#workspaces {
+    background-color: #040A10;
+    border: 2px solid #225DB1;
 }
-.widget-mpris > box > button:hover {
-  background: rgba(46, 46, 46, 1);
+#workspaces button {
+    all: unset;
+    padding: 0px 5px;
+    color: #a1c2e1;
+    transition: all .2s ease;
 }
-.widget-mpris-player {
-  box-shadow: none;
-  border: var(--border);
-  margin: 0 var(--padding);
+#workspaces button:hover {
+    color: #3D83CB;
+    text-shadow: 0px 0px 2px rgba(161, 194, 225, 0.4);
 }
-.widget-mpris-player:only-child {
-  margin: 0;
+#workspaces button.active {
+    color: #a1c2e1;
+    text-shadow: 0px 0px 3px rgba(50, 118, 197, 0.8);
+}
+#workspaces button.empty {
+    color: #70879d;
+}
+#workspaces button.empty:hover {
+    color: #4875AB;
+    text-shadow: 0px 0px 2px rgba(161, 194, 225, 0.4);
+}
+#workspaces button.empty.active {
+    color: #a1c2e1;
+}
+
+/* --- MODULOS GENERALES --- */
+
+#network,
+#idle_inhibitor,
+#cava,
+#scratchpad,
+#mode,
+#window,
+#clock,
+#battery,
+#backlight,
+#pulseaudio,
+#tray,
+#mpris,
+#load {
+    border: 2px solid #225DB1;
+    padding: 0 10px;
+    background-color: #040A10;
+    color: #a1c2e1;
+}
+
+#custom-weather{
+    color: #a1c2e1;
+}
+
+#custom-weather:hover{
+    font-size: 15px;
+    transition: all 1s ease-in;
+}
+
+/* --- MODE --- */
+#mode {
+    background-color: #225DB1;
+    color: #040A10;
+}
+
+/* removes margin if workspaces is first/last */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#cava {
+    padding: 0 5px;
+}
+
+/* --- BATTERY --- */
+#battery.charging, #battery.plugged {
+    background-color: #3276C5;
+    color: #040A10;
+}
+
+#battery.critical {
+    background-color: #FF0000;
+    color: #040A10;
+}
+
+@keyframes blink {
+    to {
+        background-color: #040A10;
+        color: #a1c2e1;
+    }
+}
+
+label:focus {
+    background-color: #040A10;
+}
+
+/* --- AUDIO --- */
+#pulseaudio.muted {
+    background-color: #040A10;
+    color: #70879d;
+}
+
+/* --- TRAY --- */
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+/* --- MPRIS --- */
+#mpris.playing {
+    padding: 0 10px;
+    background-color: #040A10;
+    color: #a1c2e1;
+    font-style: italic;
+}
+
+#tray menu {
+    font-family: sans-serif;
+}
+
+#scratchpad.empty {
+    background: transparent;
 }

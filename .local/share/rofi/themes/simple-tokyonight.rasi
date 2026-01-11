@@ -32,9 +32,9 @@ element-icon, element-text, scrollbar {
 
 window {
   location : northwest;
-  width    : 390px;
-  x-offset : 50px;
-  y-offset : 250px;
+  width    : 280px;
+  x-offset : 4px;
+  y-offset : 26px;
 
   background-color: @bg1;
   border: 1px;
