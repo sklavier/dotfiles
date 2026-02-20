@@ -1,15 +1,14 @@
-/* ROUNDED THEME FOR ROFI */
-/* Author: Newman Sanchez (https://github.com/newmanls) */
-
-* {
-    bg0:    #212121F2;
-    bg1:    #2A2A2A;
-    bg2:    #3D3D3D80;
-    bg3:    #1A73E8F2;
-    fg0:    #E6E6E6;
-    fg1:    #FFFFFF;
-    fg2:    #969696;
-    fg3:    #3D3D3D;
-}
-
-@import "template/rounded-template.rasi"
+  3 @import "~/.cache/wal/colors-rofi-dark.rofi"
+  4 * {
+  5     bg0: @background;
+  6     bg1: @color1;
+  7     bg2: @color2;
+  8     bg3: @selected-normal-background;
+  9 
+ 10     fg0: @foreground;
+ 11     fg1: @foreground;
+ 12     fg2: @color7;
+ 13     fg3: @color8;
+ 14 }
+ 15 
+ 16 @import "template/rounded-template.rasi"
