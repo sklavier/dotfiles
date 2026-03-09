@@ -120,5 +120,6 @@ wine
 wireplumber
 wl-clipboard
 wpa_supplicant
-yay
 zsh
+swayosd
+libnotify

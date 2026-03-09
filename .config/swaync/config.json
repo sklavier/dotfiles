@@ -1,99 +1,62 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
-  "ignore-gtk-theme": true,
   "positionX": "right",
   "positionY": "top",
   "layer": "overlay",
-  "control-center-layer": "top",
-  "layer-shell": true,
-  "layer-shell-cover-screen": true,
-  "cssPriority": "user",
-  "control-center-margin-top": 0,
-  "control-center-margin-bottom": 0,
-  "control-center-margin-right": 0,
-  "control-center-margin-left": 0,
-  "notification-2fa-action": true,
-  "notification-inline-replies": false,
-  "notification-body-image-height": 100,
-  "notification-body-image-width": 200,
-  "timeout": 10,
-  "timeout-low": 5,
-  "timeout-critical": 0,
-  "fit-to-screen": true,
-  "relative-timestamps": true,
-  "control-center-width": 500,
-  "control-center-height": 600,
-  "notification-window-width": 500,
-  "keyboard-shortcuts": true,
-  "notification-grouping": true,
-  "image-visibility": "when-available",
-  "transition-time": 200,
-  "hide-on-clear": false,
-  "hide-on-action": true,
-  "text-empty": "No Notifications",
-  "script-fail-notify": true,
-  "scripts": {
-    "example-script": {
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
-    },
-    "example-action-script": {
-      "exec": "echo 'Do something actionable!'",
-      "urgency": "Normal",
-      "run-on": "action"
-    }
-  },
-  "notification-visibility": {
-    "example-name": {
-      "state": "muted",
-      "urgency": "Low",
-      "app-name": "Spotify"
-    }
-  },
+  "control-center-width": 400,
+  "notification-window-width": 400,
+  "timeout": 5,
   "widgets": [
-    "inhibitors",
     "title",
+    "mpris",
+    "buttons-grid",
     "dnd",
     "notifications"
   ],
   "widget-config": {
-    "notifications": {
-      "vexpand": true
-    },
-    "inhibitors": {
-      "text": "Inhibitors",
-      "button-text": "Clear All",
-      "clear-all-button": true
-    },
     "title": {
-      "text": "Notifications",
+      "text": "Sistema",
       "clear-all-button": true,
-      "button-text": "Clear All"
-    },
-    "dnd": {
-      "text": "Do Not Disturb"
-    },
-    "label": {
-      "max-lines": 5,
-      "text": "Label Text"
+      "button-text": "Limpiar"
     },
     "mpris": {
-      "blacklist": [],
-      "autohide": false,
-      "show-album-art": "always",
-      "loop-carousel": false
+      "image-size": 96,
+      "image-radius": 12,
+      "title-color": "white",
+      "artist-color": "#bbbbbb"
     },
     "buttons-grid": {
-      "buttons-per-row": 7,
       "actions": [
         {
-          "label": "直",
+          "label": "",
           "type": "toggle",
           "active": true,
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
           "update-command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
+        },
+        {
+          "label": "",
+          "type": "toggle",
+          "active": true,
+          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && bluetoothctl power on || bluetoothctl power off'",
+          "update-command": "sh -c '[[ $(bluetoothctl show | grep \"Powered: yes\" | wc -l) -gt 0 ]] && echo true || echo false'"
+        },
+        {
+          "label": "",
+          "command": "kitty -e fastfetch"
+        },
+        {
+          "label": "",
+          "command": "sh -c 'rm -rf ~/.cache/* && notify-send \"Caca sacada\" \"Caché de usuario limpia\"'"
+        },
+        {
+          "label": "",
+          "command": "systemctl poweroff"
         }
       ]
+    },
+    "dnd": {
+      "text": "No molestar"
     }
   }
 }

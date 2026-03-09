@@ -1,0 +1,25 @@
+window {
+    background: rgba(4, 10, 16, 0.7); /* Tu color0 con blur */
+    border: 1px solid #4875AB;       /* Tu color2 */
+    border-radius: 12px;
+}
+
+#container {
+    margin: 10px;
+}
+
+#label {
+    color: #a1c2e1;                  /* Tu foreground */
+    font-family: "JetBrainsMono NF";
+    font-size: 20px;
+}
+
+#slider {
+    background: rgba(161, 194, 225, 0.1);
+    min-height: 10px;
+}
+
+#slider trough highlight {
+    background: #3D83CB;             /* Tu color6 (Azul brillante) */
+    border-radius: 5px;
+}
