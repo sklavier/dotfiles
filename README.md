@@ -40,3 +40,8 @@ You can exec xdg-user-dirs-update to make as an easy way the basic dirs
 ```bash
   xdg-user-dirs-update
 ```
+## Important!
+> [!CAUTION]
+> **Check the file paths!**
+> Some configuration files (like `.config/rofi/config.rasi`) contain hardcoded paths pointing to `/home/bachpro/`. 
+> Please make sure to search and replace `bachpro` with your own username, or those programs might fail to launch.
