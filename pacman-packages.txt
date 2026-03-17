@@ -43,7 +43,6 @@ python-pywal
 python-pywalfox
 ranger
 rofi
-spotify
 swaync
 swww
 toilet
