@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhistcnt =3
-let g:netrw_dirhist_3='/home/bachpro/.config'
-let g:netrw_dirhist_2='/home/bachpro/.config/fastfetch'
-let g:netrw_dirhist_1='/home/bachpro/.config/qt5ct'
+let g:netrw_dirhist_3='/home/$USER/.config'
+let g:netrw_dirhist_2='/home/$USER/.config/fastfetch'
+let g:netrw_dirhist_1='/home/$USER/.config/qt5ct'

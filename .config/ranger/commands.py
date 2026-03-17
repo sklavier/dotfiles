@@ -70,4 +70,4 @@ class empty(Command):
     """
 
     def execute(self):
-        self.fm.run("rm -rf /home/bachpro/.Trash/ && mkdir -p /home/bachpro/.Trash")
+        self.fm.run("rm -rf /home/$USER/.Trash/ && mkdir -p /home/$USER/.Trash")

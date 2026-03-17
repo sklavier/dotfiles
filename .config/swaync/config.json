@@ -28,7 +28,7 @@
     "buttons-grid": {
       "actions": [
         {
-          "label": "",
+          "label": " ",
           "type": "toggle",
           "active": true,
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
@@ -42,15 +42,15 @@
           "update-command": "sh -c '[[ $(bluetoothctl show | grep \"Powered: yes\" | wc -l) -gt 0 ]] && echo true || echo false'"
         },
         {
-          "label": "",
-          "command": "kitty -e fastfetch"
+          "label": " ",
+          "command": "kitty fastfetch"
         },
         {
-          "label": "",
-          "command": "sh -c 'rm -rf ~/.cache/* && notify-send \"Caca sacada\" \"Caché de usuario limpia\"'"
+          "label": " ",
+          "command": "sh -c 'rm -rf ~/.cache/* && notify-send \"Sin kk!\" \"no cache\"'"
         },
         {
-          "label": "",
+          "label": " ",
           "command": "systemctl poweroff"
         }
       ]

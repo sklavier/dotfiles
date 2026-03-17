@@ -65,7 +65,7 @@
   },
 
   "network": {
-    "interface": "wlp2s0",
+    "interface": "wlp2s0", //depens of your wifi interface, use `ip link` to find it
     "format": "{ifname}",
     "format-wifi": "{ipaddr}  ",
     "format-ethernet": "{ifname}  ",
