@@ -4,10 +4,10 @@
   "spacing": 4,
   "height": 34,
   "modules-left": [
-    "hyprland/workspaces",
-    "cava",
-    "mpris",
-    "network"
+      "hyprland/workspaces",
+      "cava",
+      "mpris",
+      "network"
     //"custom/weather",
     //"hyprland/mode",
   ],
@@ -23,58 +23,58 @@
     "tray"
   ],
   // Modules configuration
-  	"battery": {
-		"states": {
-			"warning": 20,
-			"critical": 10
-		},
-		"format": "{icon} {capacity}%",
-		"format-time": "{H} hr {M} min",
-		"format-icons": [
-			"󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
-		],
-		"format-charging": "󰉁 {capacity}%",
-		//"min-length": 7,
-		//"max-length": 7,
-		"tooltip-format": "<b>Discharging</b>: {time}",
-		"tooltip-format-charging": "<b>Charging</b>: {time}",
-		"events": {
-		"on-discharging-warning": "notify-send 'Battery Low (20%)' -u critical -i 'battery-020'",
-		"on-discharging-critical": "notify-send 'Battery Critical (10%)' -u critical -i 'battery-010'",
-		"on-charging-100": "notify-send 'Battery Full (100%)' -i 'battery-100-charged'"
-		}
-	},
+  "battery": {
+      "states": {
+          "warning": 20,
+          "critical": 10
+      },
+      "format": "{icon} {capacity}%",
+      "format-time": "{H} hr {M} min",
+      "format-icons": [
+          "󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+      ],
+      "format-charging": "󰉁 {capacity}%",
+        //"min-length": 7,
+        //"max-length": 7,
+        "tooltip-format": "<b>Discharging</b>: {time}",
+        "tooltip-format-charging": "<b>Charging</b>: {time}",
+        "events": {
+            "on-discharging-warning": "notify-send 'Battery Low (20%)' -u critical -i 'battery-020'",
+            "on-discharging-critical": "notify-send 'Battery Critical (10%)' -u critical -i 'battery-010'",
+            "on-charging-100": "notify-send 'Battery Full (100%)' -i 'battery-100-charged'"
+        }
+  },
   "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "active": " ",
-      "default": " ",
-      "empty": " ",
-      "urgent": "! "
-    },
-    "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5]
-    }
+      "format": "{icon}",
+      "format-icons": {
+          "active": " ",
+          "default": " ",
+          "empty": " ",
+          "urgent": "! "
+      },
+      "persistent-workspaces": {
+          "*": [1, 2, 3, 4, 5]
+      }
   },
 
   "hyprland/window": {
-    "format": "{title}",
-    "max-length": 30,
-    "all-outputs": true,
-    "format-empty": "Welcome!"
+      "format": "{title}",
+      "max-length": 30,
+      "all-outputs": true,
+      "format-empty": "Welcome!"
   },
 
   "network": {
-    "interface": "wlp2s0", //depens of your wifi interface, use `ip link` to find it
-    "format": "{ifname}",
-    "format-wifi": "{ipaddr}  ",
-    "format-ethernet": "{ifname}  ",
-    "format-disconnected": " ",
-    "tooltip-format": "{ifname}",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
-    "tooltip-format-ethernet": "{ifname} ",
-    "tooltip-format-disconnected": "Disconnected",
-    "max-length": 45
+      "interface": "wlp2s0", //depens of your wifi interface, use `ip link` to find it
+      "format": "{ifname}",
+      "format-wifi": "{ipaddr}  ",
+      "format-ethernet": "{ifname}  ",
+      "format-disconnected": " ",
+      "tooltip-format": "{ifname}",
+      "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
+      "tooltip-format-ethernet": "{ifname} ",
+      "tooltip-format-disconnected": "Disconnected",
+      "max-length": 45
   },
 
   "cava": {
@@ -93,7 +93,7 @@
     "hide_on_silence": true,
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     "actions": {
-      "on-click-right": "mode"
+        "on-click-right": "mode"
     }
   },
 
@@ -104,71 +104,71 @@
     "interval": 1,
     "dynamic-len": 20,
     "status-icons": {
-      "playing": "▶",
-      "paused": "⏸",
-      "stopped": ""
+        "playing": "▶",
+        "paused": "⏸",
+        "stopped": ""
     },
     "dynamic-order": ["title", "artist"]
     //"ignored-players": ["firefox"]
   },
   "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    }
+      "format": "{icon}",
+      "format-icons": {
+          "activated": "",
+          "deactivated": ""
+      }
   },
   "hyprland/mode": {
-    "format": "{}"
+      "format": "{}"
   },
   "hyprland/scratchpad": {
-    "format": "{icon} {count}",
-    "show-empty": false,
-    "format-icons": ["", ""],
-    "tooltip": true,
-    "tooltip-format": "{app}: {title}"
+      "format": "{icon} {count}",
+      "show-empty": false,
+      "format-icons": ["", ""],
+      "tooltip": true,
+      "tooltip-format": "{app}: {title}"
   },
   "tray": {
-    "icon-size": 14,
-    "spacing": 10
+      "icon-size": 14,
+      "spacing": 10
   },
   "load": {
-    "format": " {}"
+      "format": " {}"
   },
   "clock": {
-    "timezone": "America/Santiago",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": " {:%H:%M}",
-    "format-alt": " {:%a %F}"
+      "timezone": "America/Santiago",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format": " {:%H:%M}",
+      "format-alt": " {:%a %F}"
   },
   "custom/weather": {
-    "format": "{}°",
-    "tooltip": true,
-    "interval": 3600,
-    "exec": "wttrbar --lang es -m --nerd",
-    "return-type": "json"
+      "format": "{}°",
+      "tooltip": true,
+      "interval": 3600,
+      "exec": "wttrbar --lang es -m --nerd",
+      "return-type": "json"
   },
   "backlight": {
-    "device": "acpi_video1",
-    "format": "{icon} {percent}%",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
+      "device": "acpi_video1",
+      "format": "{icon} {percent}%",
+      "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
   "pulseaudio": {
-    "scroll-step": 5,
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{icon} {volume}% ",
-    "format-bluetooth-muted": "x {icon}",
-    "format-muted": "x 0%",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "󰂑",
-      "headset": "󰂑",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""]
-    },
-    "on-click": "pactl set-sink-mute 0 toggle",
-    "on-click-right": "pavucontrol"
+      "scroll-step": 5,
+      "format": "{icon} {volume}%",
+      "format-bluetooth": "{icon} {volume}% ",
+      "format-bluetooth-muted": "x {icon}",
+      "format-muted": "x 0%",
+      "format-icons": {
+          "headphone": "",
+          "hands-free": "󰂑",
+          "headset": "󰂑",
+          "phone": "",
+          "portable": "",
+          "car": "",
+          "default": ["", "", ""]
+      },
+      "on-click": "pactl set-sink-mute 0 toggle",
+      "on-click-right": "pavucontrol"
   }
 }

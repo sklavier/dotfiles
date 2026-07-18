@@ -30,8 +30,8 @@ local Browser = "firefox"
 
 --      ENV
 
-hl.env("XCURSOR_SIZE", 24)
-hl.env("HYPRCURSOR_SIZE", 24)
+hl.env("HYPRCURSOR_THEME", "BreezeX-Black")
+hl.env("HYPRCURSOR_SIZE", 32)
 hl.env("MOZ_ENABLE_WAYLAND", 1)
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", 1)
@@ -51,61 +51,54 @@ hl.config({
 
 })
 
---    plugin = {
---        csgo_vulkan_fix = {
---            fix_mouse = true,
---        },
---    },
--- hl.plugin.csgo_vulkan_fix.vkfix_app({ app = "cs2", w = 1920, h = 1080 })
+hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
+hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
+hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
 
-	hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
-	hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
-	hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
+-- ┃  ┏━┃┏━┃┃ ┃  ┏┛┃   ┏━┛┏━┛┏━┛┃  
+-- ┃  ┃ ┃┃ ┃┏┛   ┃━┏┛  ┏━┛┏━┛┏━┛┃  
+-- ━━┛━━┛━━┛┛ ┛  ━━┛   ┛  ━━┛━━┛━━┛
+--      FEELING
 
-	-- ┃  ┏━┃┏━┃┃ ┃  ┏┛┃   ┏━┛┏━┛┏━┛┃  
-	-- ┃  ┃ ┃┃ ┃┏┛   ┃━┏┛  ┏━┛┏━┛┏━┛┃  
-	-- ━━┛━━┛━━┛┛ ┛  ━━┛   ┛  ━━┛━━┛━━┛
-	--      FEELING
+hl.config({
+    general = {
+        gaps_in = 7,
+        gaps_out = 14,
+        border_size = 2,
+        resize_on_border = true,
+        allow_tearing = false,
+        layout = "dwindle",
+        col = {
+            active_border = "rgba(225DB1aa)",
+            inactive_border = "rgba(595959aa)",
+        },
+    },
+})
 
-	hl.config({
-	   general = {
-		gaps_in = 7,
-		gaps_out = 14,
-		border_size = 2,
-		resize_on_border = true,
-		allow_tearing = false,
-		layout = "dwindle",
-		col = {
-		   active_border = "rgba(225DB1aa)",
-		   inactive_border = "rgba(595959aa)",
-		},
-	   },
-	})
+hl.config({
+    decoration = {
+        rounding = 10,
+        rounding_power = 2,
+        active_opacity = 1.0,
+        inactive_opacity = 0.8,
+        shadow = {
+            enabled = true,
+            range = 4,
+            render_power = 3,
+            color = "rgba(1a1a1aee)",
+        },
+        blur = {
+            enabled = true,
+            size = 3,
+            passes = 1,
+            vibrancy = 0.1696,
+        },
+    },
+})
 
-	hl.config({
-	   decoration = {
-		rounding = 10,
-		rounding_power = 2,
-		active_opacity = 1.0,
-		inactive_opacity = 0.8,
-		shadow = {
-		   enabled = true,
-		   range = 4,
-		   render_power = 3,
-		   color = "rgba(1a1a1aee)",
-		},
-		blur = {
-		   enabled = true,
-		   size = 3,
-		   passes = 1,
-		   vibrancy = 0.1696,
-		},
-	   },
-	})
-
-	hl.config({
-	   animations = {
-		enabled = true, -- Fix: Cambiado de { true, "please:)" } a booleano puro para evitar errores de Lua
+hl.config({
+    animations = {
+        enabled = true, 
     },
 })
 
@@ -143,13 +136,6 @@ hl.config({
         },
     },
 })
-
---hl.config({
---    gestures = {
---        workspace_swipe = true,
---        workspace_swipe_fingers = 3,
---  }
---})
 
 hl.device({
     name = "epic-mouse-v1",
@@ -218,6 +204,8 @@ hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd("~/.config/scripts/reload_wayba
 hl.bind("Print", hl.dsp.exec_cmd('grim ~/Imágenes/Screenshots/$(date +%Y%m%d_%H%M%S).png && wl-copy < ~/Imágenes/Screenshots/$(date +%Y%m%d_%H%M%S).png && notify-send "Captura" "$(date +%Y%m%d_%H%M%S).png" -i camera-photo"'))
 
 hl.bind(mainMod .. " + " .. "Print", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Imágenes/Screenshots/$(date +%Y%m%d_%H%M%S).png && wl-copy < ~/Imágenes/Screenshots/$(date +%Y%m%d_%H%M%S).png && notify-send "Captura" "$(date +%Y%m%d_%H%M%S).png" -i camera-photo'))
+
+hl.bind(mainMod .. " + " .. "L", hl.dsp.exec_cmd("hyprlock"))
 
 -- ┃┃┃┛┏━ ┏━ ┏━┃┃┃┃  ┏┛┃   ┃  ┏━┃┃ ┃┏━┃┃ ┃━┏┛
 -- ┃┃┃┃┃ ┃┃ ┃┃ ┃┃┃┃  ┃━┏┛  ┃  ┏━┃━┏┛┃ ┃┃ ┃ ┃ 
@@ -315,6 +303,9 @@ hl.layer_rule({
     ignore_alpha = 0,
 })
 
+-- ┏━┃┃ ┃━┏┛┏━┃┏━┛━┏┛┏━┃┏━┃━┏┛
+-- ┏━┃┃ ┃ ┃ ┃ ┃━━┃ ┃ ┏━┃┏┏┛ ┃ 
+-- ┛ ┛━━┛ ┛ ━━┛━━┛ ┛ ┛ ┛┛ ┛ ┛ 
 -- Autostart
 hl.on("hyprland.start", function()
     hl.exec_cmd("waybar &")
@@ -323,9 +314,81 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
     hl.exec_cmd("swayosd-server")
     hl.exec_cmd("swaync")
+    hl.exec_cmd("hypridle")
 end)
 
--- Exec (run every reload)
+-- on restart 
 hl.on("config.reloaded", function()
     hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme prefer-dark")
 end)
+
+-- ┏━┃┃  ┃ ┃┏━┛┛┏━ ┏━┛
+-- ┏━┛┃  ┃ ┃┃ ┃┃┃ ┃━━┃
+-- ┛  ━━┛━━┛━━┛┛┛ ┛━━┛
+--      Plugins
+hl.config { plugin = { dynamic_cursors = {
+
+    enabled = true,
+
+    mode = "tilt",
+
+    threshold = 2,
+
+    -- rotate mode
+    rotate = {
+        length = 32,
+        offset = 0.0,
+    },
+
+    -- tilt mode
+    tilt = {
+        limit = 5000,
+
+        -- linear             - a linear function is used
+        -- quadratic          - a quadratic function is used (most realistic to actual air drag)
+        -- negative_quadratic - negative version of the quadratic one, feels more aggressive
+        activation = "quadratic",
+
+        -- time window (ms) over which the speed is calculated
+        -- higher values will make slow motions smoother but more delayed
+        window = 100,
+
+        -- full tilt for each side (°)
+        full = 60,
+    },
+
+    -- stretch mode
+    stretch = {
+
+        limit = 3000,
+        activation = "quadratic",
+        window = 100,
+    },
+
+    shake = {
+
+        enabled = true,
+        threshold = 6.0,
+        base = 4.0,
+        speed = 4.0,
+        influence = 0.0,
+        limit = 0.0,
+        timeout = 2000,
+        -- show cursor behaviour `tilt`, `rotate`, etc. while shaking
+        effects = false,
+        ipc = false,
+    },
+    -- hyprcursor texture sync
+    hyprcursor = {
+
+        -- 0 - never use pixelated scaling
+        -- 1 - use pixelated when no highres image
+        -- 2 - always use pixelated scaling
+        nearest = 1,
+        enabled = true,
+
+        -- -1 means we use [normal cursor size] * [shake:base option]
+        resolution = -1,
+        fallback = "clientside",
+    },
+}}}
