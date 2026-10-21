@@ -1,5 +1,5 @@
 {
-  "reload_style_on_change": true,
+    "reload_style_on_change": true,
   //"output": ["HDMI-A-1"],
   "spacing": 4,
   "height": 34,
@@ -8,42 +8,19 @@
       "cava",
       "mpris",
       "network"
-    //"custom/weather",
     //"hyprland/mode",
   ],
   "modules-center": ["hyprland/window"],
   "modules-right": [
     //"custom/weather",
-    //"hyprland/scratchpad",
-    //"idle_inhibitor",
     "pulseaudio",
-    "battery",
-    "backlight",
+    "custom/brightness",
+    "custom/hyprpicker",
+    "custom/updates",
     "clock",
     "tray"
   ],
   // Modules configuration
-  "battery": {
-      "states": {
-          "warning": 20,
-          "critical": 10
-      },
-      "format": "{icon} {capacity}%",
-      "format-time": "{H} hr {M} min",
-      "format-icons": [
-          "󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
-      ],
-      "format-charging": "󰉁 {capacity}%",
-        //"min-length": 7,
-        //"max-length": 7,
-        "tooltip-format": "<b>Discharging</b>: {time}",
-        "tooltip-format-charging": "<b>Charging</b>: {time}",
-        "events": {
-            "on-discharging-warning": "notify-send 'Battery Low (20%)' -u critical -i 'battery-020'",
-            "on-discharging-critical": "notify-send 'Battery Critical (10%)' -u critical -i 'battery-010'",
-            "on-charging-100": "notify-send 'Battery Full (100%)' -i 'battery-100-charged'"
-        }
-  },
   "hyprland/workspaces": {
       "format": "{icon}",
       "format-icons": {
@@ -65,7 +42,7 @@
   },
 
   "network": {
-      "interface": "wlp2s0", //depens of your wifi interface, use `ip link` to find it
+      "interface": "wlo1", //depens of your wifi interface, use `ip link` to find it
       "format": "{ifname}",
       "format-wifi": "{ipaddr}  ",
       "format-ethernet": "{ifname}  ",
@@ -76,7 +53,31 @@
       "tooltip-format-disconnected": "Disconnected",
       "max-length": 45
   },
-
+  "custom/brightness": {
+      "format": " {text}%",
+      "signal": 8,
+      "exec": "~/.config/waybar/brightness-control.sh get",
+      "on-scroll-up": "~/.config/waybar/brightness-control.sh up",
+      "on-scroll-down": "~/.config/waybar/brightness-control.sh down",
+      "on-click": "~/.config/waybar/brightness-control.sh left_click",
+      "on-click-right":  "~/.config/waybar/brightness-control.sh right_click",
+      "tooltip": false
+  },
+  "custom/hyprpicker": {
+      "exec": "printf '󰈊 '",
+      "interval": "once",
+      "tooltip": true,
+      "tooltip-format": "Seleccionar color",
+      "on-click": "hyprpicker -a"
+  },
+  "custom/updates": {
+      "exec": "bash ~/.config/waybar/updates-count.sh",
+      "return-type": "json",
+      "format": "{text}",
+      "interval": 1800,
+      "hide-empty": true,
+      "tooltip": true
+  },
   "cava": {
     //"cava_config": "$XDG_CONFIG_HOME/cava/config",
     "framerate": 30,
@@ -96,7 +97,6 @@
         "on-click-right": "mode"
     }
   },
-
   "mpris": {
     //"player": "firefox",
     "format": "{status_icon} {dynamic}  ",
@@ -111,22 +111,8 @@
     "dynamic-order": ["title", "artist"]
     //"ignored-players": ["firefox"]
   },
-  "idle_inhibitor": {
-      "format": "{icon}",
-      "format-icons": {
-          "activated": "",
-          "deactivated": ""
-      }
-  },
   "hyprland/mode": {
       "format": "{}"
-  },
-  "hyprland/scratchpad": {
-      "format": "{icon} {count}",
-      "show-empty": false,
-      "format-icons": ["", ""],
-      "tooltip": true,
-      "tooltip-format": "{app}: {title}"
   },
   "tray": {
       "icon-size": 14,
@@ -147,11 +133,6 @@
       "interval": 3600,
       "exec": "wttrbar --lang es -m --nerd",
       "return-type": "json"
-  },
-  "backlight": {
-      "device": "acpi_video1",
-      "format": "{icon} {percent}%",
-      "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
   "pulseaudio": {
       "scroll-step": 5,

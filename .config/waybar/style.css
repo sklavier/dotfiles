@@ -1,3 +1,5 @@
+@import "/home/skl4vier/.cache/wal/wallpaper-theme.css";
+
 * {
     font-size: 14px;
     border-radius: 5px;
@@ -7,7 +9,7 @@ window#waybar {
     font-family: "JetBrainsMono Nerd Font", monospace;
     background-color: transparent;
     border-bottom: 0px;
-    color: #a1c2e1; /* texto claro */
+    color: @theme_text;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -38,32 +40,34 @@ button {
 
 /* --- WORKSPACES --- */
 #workspaces {
-    background-color: #040A10;
-    border: 2px solid #225DB1;
+    background-color: @theme_background;
+    border: 2px solid @theme_accent;
 }
 #workspaces button {
     all: unset;
     padding: 0px 5px;
-    color: #a1c2e1;
+    color: @theme_text;
     transition: all .2s ease;
 }
 #workspaces button:hover {
-    color: #3D83CB;
-    text-shadow: 0px 0px 2px rgba(161, 194, 225, 0.4);
+    color: @theme_accent;
+    text-shadow: 0px 0px 2px @theme_border;
 }
 #workspaces button.active {
-    color: #a1c2e1;
-    text-shadow: 0px 0px 3px rgba(50, 118, 197, 0.8);
+    background-color: @theme_background;
+    color: @theme_accent;
+    text-shadow: none;
 }
 #workspaces button.empty {
-    color: #70879d;
+    color: @theme_dim;
 }
 #workspaces button.empty:hover {
-    color: #4875AB;
-    text-shadow: 0px 0px 2px rgba(161, 194, 225, 0.4);
+    color: @theme_accent_alt;
+    text-shadow: 0px 0px 2px @theme_border;
 }
 #workspaces button.empty.active {
-    color: #a1c2e1;
+    background-color: @theme_background;
+    color: @theme_accent;
 }
 
 /* --- MODULOS GENERALES --- */
@@ -76,19 +80,21 @@ button {
 #window,
 #clock,
 #battery,
-#backlight,
+#custom-brightness,
+#custom-hyprpicker,
+#custom-updates,
 #pulseaudio,
 #tray,
 #mpris,
 #load {
-    border: 2px solid #225DB1;
+    border: 2px solid @theme_accent;
     padding: 0 10px;
-    background-color: #040A10;
-    color: #a1c2e1;
+    background-color: @theme_background;
+    color: @theme_text;
 }
 
 #custom-weather{
-    color: #a1c2e1;
+    color: @theme_text;
 }
 
 #custom-weather:hover{
@@ -98,8 +104,8 @@ button {
 
 /* --- MODE --- */
 #mode {
-    background-color: #225DB1;
-    color: #040A10;
+    background-color: @theme_accent;
+    color: @theme_background;
 }
 
 /* removes margin if workspaces is first/last */
@@ -114,32 +120,37 @@ button {
     padding: 0 5px;
 }
 
+#custom-hyprpicker,
+#custom-updates {
+    color: @theme_accent;
+}
+
 /* --- BATTERY --- */
 #battery.charging, #battery.plugged {
-    background-color: #3276C5;
-    color: #040A10;
+    background-color: @theme_accent_alt;
+    color: @theme_background;
 }
 
 #battery.critical {
-    background-color: #FF0000;
-    color: #040A10;
+    background-color: @theme_critical;
+    color: @theme_background;
 }
 
 @keyframes blink {
     to {
-        background-color: #040A10;
-        color: #a1c2e1;
+        background-color: @theme_background;
+        color: @theme_text;
     }
 }
 
 label:focus {
-    background-color: #040A10;
+    background-color: @theme_background;
 }
 
 /* --- AUDIO --- */
 #pulseaudio.muted {
-    background-color: #040A10;
-    color: #70879d;
+    background-color: @theme_background;
+    color: @theme_dim;
 }
 
 /* --- TRAY --- */
@@ -153,8 +164,8 @@ label:focus {
 /* --- MPRIS --- */
 #mpris.playing {
     padding: 0 10px;
-    background-color: #040A10;
-    color: #a1c2e1;
+    background-color: @theme_background;
+    color: @theme_text;
     font-style: italic;
 }
 

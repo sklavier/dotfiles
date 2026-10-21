@@ -1,25 +1,7 @@
-window {
-    background: rgba(4, 10, 16, 0.7); /* Tu color0 con blur */
-    border: 1px solid #4875AB;       /* Tu color2 */
-    border-radius: 12px;
-}
-
-#container {
-    margin: 10px;
-}
-
-#label {
-    color: #a1c2e1;                  /* Tu foreground */
-    font-family: "JetBrainsMono NF";
-    font-size: 20px;
-}
-
-#slider {
-    background: rgba(161, 194, 225, 0.1);
-    min-height: 10px;
-}
-
-#slider trough highlight {
-    background: #3D83CB;             /* Tu color6 (Azul brillante) */
-    border-radius: 5px;
-}
+@import url("file:///home/skl4vier/.cache/wal/wallpaper-theme.css");
+window { background-color: @theme_background; color: @theme_text; border: 1px solid @theme_accent; border-top: 3px solid @theme_accent; border-radius: 10px; }
+#container { margin: 14px; }
+#label { color: @theme_text; font-family: "JetBrainsMono Nerd Font"; font-size: 14px; font-weight: 600; }
+#slider { background-color: @theme_surface; min-height: 10px; border-radius: 5px; }
+#slider trough { background-color: @theme_surface; border-radius: 5px; min-height: 10px; }
+#slider trough highlight { background-color: @theme_accent; border-radius: 5px; }

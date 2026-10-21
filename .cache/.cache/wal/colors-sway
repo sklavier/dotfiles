@@ -1,0 +1,21 @@
+set $wallpaper /home/bachpro/Imágenes/Wallpapers/Forest-Dark.png
+
+set $background #040A10
+set $foreground #a1c2e1
+
+set $color0 #040A10
+set $color1 #225DB1
+set $color2 #4875AB
+set $color3 #1F60C1
+set $color4 #3276C5
+set $color5 #5486B8
+set $color6 #3D83CB
+set $color7 #a1c2e1
+set $color8 #70879d
+set $color9 #225DB1
+set $color10 #4875AB
+set $color11 #1F60C1
+set $color12 #3276C5
+set $color13 #5486B8
+set $color14 #3D83CB
+set $color15 #a1c2e1

@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/bachpro/Imágenes/Wallpapers/Forest-Dark.png"
+let background = "#040A10"
+let foreground = "#a1c2e1"
+let cursor     = "#a1c2e1"
+
+" Colors
+let color0  = "#040A10"
+let color1  = "#225DB1"
+let color2  = "#4875AB"
+let color3  = "#1F60C1"
+let color4  = "#3276C5"
+let color5  = "#5486B8"
+let color6  = "#3D83CB"
+let color7  = "#a1c2e1"
+let color8  = "#70879d"
+let color9  = "#225DB1"
+let color10 = "#4875AB"
+let color11 = "#1F60C1"
+let color12 = "#3276C5"
+let color13 = "#5486B8"
+let color14 = "#3D83CB"
+let color15 = "#a1c2e1"

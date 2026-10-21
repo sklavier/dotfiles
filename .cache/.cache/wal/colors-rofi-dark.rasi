@@ -1,0 +1,32 @@
+* {
+    background: #0c1013;
+    background-color: #0c1013;
+    foreground: #eaf0f6;
+    border-color: #3c5673;
+    selected-normal-background: #3c81ca;
+    selected-normal-foreground: #0c1013;
+    selected-active-background: #76b1f0;
+    selected-active-foreground: #0c1013;
+    selected-urgent-background: #ff6878;
+    selected-urgent-foreground: #0c1013;
+    active-background: #76b1f0;
+    active-foreground: #0c1013;
+    urgent-background: #ff6878;
+    urgent-foreground: #0c1013;
+    normal-background: #0c1013;
+    normal-foreground: #eaf0f6;
+    alternate-normal-background: #28323b;
+    alternate-normal-foreground: #eaf0f6;
+    dim: #78858f;
+    spacing: 2;
+}
+window { background-color: @background; border: 2; border-color: @border-color; padding: 12; }
+mainbox { padding: 0; border: 0; }
+listview { spacing: 4; scrollbar: true; padding: 4 0 0; }
+element { padding: 8; border: 0; }
+element normal.normal { background-color: @normal-background; text-color: @normal-foreground; }
+element selected.normal { background-color: @selected-normal-background; text-color: @selected-normal-foreground; }
+element selected.active { background-color: @selected-active-background; text-color: @selected-active-foreground; }
+element selected.urgent { background-color: @selected-urgent-background; text-color: @selected-urgent-foreground; }
+inputbar { text-color: @foreground; padding: 8; spacing: 4; }
+entry, prompt { text-color: @foreground; }

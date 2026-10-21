@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/usr/share/hypr/wall0.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0A121B",
+        "foreground": "#77e0e0",
+        "cursor": "#77e0e0"
+    },
+    "colors": {
+        "color0": "#0A121B",
+        "color1": "#047092",
+        "color2": "#038E9F",
+        "color3": "#02B1B1",
+        "color4": "#01C3BC",
+        "color5": "#01A4D2",
+        "color6": "#00AFED",
+        "color7": "#77e0e0",
+        "color8": "#539c9c",
+        "color9": "#047092",
+        "color10": "#038E9F",
+        "color11": "#02B1B1",
+        "color12": "#01C3BC",
+        "color13": "#01A4D2",
+        "color14": "#00AFED",
+        "color15": "#77e0e0"
+    }
+}
